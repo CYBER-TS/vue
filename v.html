@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js サンプル</title>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>Vue3</h1>
+    <div id="app">
+        <div v-html="message"></div>
+    </div>
+
+    <script>
+        const list = ['One', 'Two', 'Three'];
+        const appdata = {
+            data() {
+                return {
+                    message: `<ul>${list.map(item => `<li>${item}</li>`).join('')}</ul>`
+                }
+            }
+        };
+
+        Vue.createApp(appdata).mount('#app');
+    </script>
+</body>
+</html>
